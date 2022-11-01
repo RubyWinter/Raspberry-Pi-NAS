@@ -1,0 +1,50 @@
+Open Media Vault (after installing os)
+
+//check and install updates/upgrades
+sudo apt update
+sudo apt upgrade
+
+//download open media vault
+wget -O - https://raw.githubusercontent.com/OpenMediaVault-Plugin-Developers/installScript/master/install | sudo bash
+
+//Reboot to finish install
+sudo reboot
+
+//get raspberry pi's IP
+hostname -I
+
+//On your computer's browser
+http://192.168.1.72 (raspberry pi local ip)
+
+//login and change password
+login U:admin P:openmediavault
+change passwords
+
+//Add a file system
+-filesystems
+-mount chosen file system
+
+//create shared folders
+-shared folders
+-add (fill in details of folder)
+-set paths
+-set permissions
+-save
+
+//Enable SAMBA/CIFS
+-services
+-SMB/CIFS
+-Enable
+-save
+-shares
+-add
+-shared folder
+-public
+-save
+-apply
+
+//Add users
+-Access Rights Management
+-user
+-add (set up username and password)
+-save
